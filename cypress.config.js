@@ -8,3 +8,12 @@ module.exports = defineConfig({
     specPattern: "cypress/integration/examples/*.js",
   },
 });
+
+/* const { defineConfig } = require("cypress");
+
+module.exports = defineConfig({
+  e2e: {
+    baseUrl: "http://localhost:1234",
+    specPattern: "cypress/integration/examples/*.js",
+  },
+}); */
