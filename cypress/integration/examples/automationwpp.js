@@ -1,5 +1,11 @@
+require("dotenv").config();
+
 describe("My Test Suite", function () {
   it("My FirstTest case", function () {
+    // Get username and password from environment variables
+    const username = Cypress.env("USERNAME");
+    const password = Cypress.env("PASSWORD");
+
     //Visiting the website
     cy.visit(
       "http://localhost/wordpress/wp-login.php?loggedout=true&wp_lang=en_US"
@@ -7,8 +13,8 @@ describe("My Test Suite", function () {
 
     //For login
     cy.wait(2000);
-    cy.get("#user_login").type("admin");
-    cy.get("#user_pass").type("12345");
+    cy.get("#user_login").type(username);
+    cy.get("#user_pass").type(password);
     cy.get("#wp-submit").click();
 
     // Clicking on the Plugins menu
